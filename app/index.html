@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Trophy Ledger — GTA VI Trophy Guide &amp; Tracker</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <div>
+      <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 trophies</p>
+      <h1>Leonida Trophy Ledger</h1>
+      <p class="subtitle">The offline guide and tracker for every GTA VI trophy — official names,
+      descriptions and grades, a checklist that saves in your browser, a roadmap to the
+      platinum, and every missable trophy flagged.</p>
+    </div>
+    <div class="progress-card" id="progressCard">
+      <p class="big-count"><span id="earnedCount">0</span><span class="of"> / 55</span></p>
+      <p class="progress-label">trophies earned</p>
+      <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+      <p class="progress-detail" id="progressDetail">Platinum 0/1 &middot; Gold 0/2 &middot; Silver 0/6 &middot; Bronze 0/46</p>
+      <p class="progress-note">Progress saves in this browser only. Export it to keep a backup.</p>
+    </div>
+  </div>
+  <nav class="tabs" id="tabs">
+    <a href="#/" data-view="checklist" class="tab">Checklist</a>
+    <a href="#/roadmap" data-view="roadmap" class="tab">Roadmap to Platinum</a>
+    <a href="#/missables" data-view="missables" class="tab">Missable trophies</a>
+    <a href="#/about" data-view="about" class="tab">About &amp; sources</a>
+  </nav>
+</header>
+
+<main>
+  <section id="view-checklist" class="view">
+    <div class="controls" id="controls">
+      <label class="search-label">Search
+        <input id="searchBox" type="search" placeholder="Trophy name or description…" autocomplete="off">
+      </label>
+      <fieldset class="kind-chips" id="kindChips">
+        <legend>Kind</legend>
+        <button type="button" data-kind="all" class="chip active">All</button>
+        <button type="button" data-kind="story" class="chip">Story</button>
+        <button type="button" data-kind="missable" class="chip">Missable</button>
+        <button type="button" data-kind="collectible" class="chip">Collectibles</button>
+        <button type="button" data-kind="activity" class="chip">Activities</button>
+        <button type="button" data-kind="online" class="chip">Online</button>
+      </fieldset>
+      <label class="grade-label">Grade
+        <select id="gradeFilter">
+          <option value="all">All grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+      </label>
+      <label class="grade-label">Show
+        <select id="earnedFilter">
+          <option value="all">All trophies</option>
+          <option value="earned">Earned only</option>
+          <option value="unearned">Not yet earned</option>
+        </select>
+      </label>
+      <label class="toggle">
+        <input type="checkbox" id="spoilerToggle">
+        <span>Hide story spoilers</span>
+      </label>
+      <div class="save-buttons">
+        <button type="button" id="exportBtn">Export progress</button>
+        <label class="import-btn">Import progress
+          <input id="importFile" type="file" accept="application/json">
+        </label>
+        <button type="button" id="resetBtn" class="quiet">Reset</button>
+      </div>
+    </div>
+    <p class="spoiler-note" id="spoilerNote" hidden>Spoilers are hidden: story trophies you have not earned yet show as
+    “??? (Hidden trophy)” until you earn them. Turn the toggle off to reveal them.</p>
+    <p class="result-count" id="resultCount"></p>
+    <div class="layout">
+      <ol class="trophy-list" id="trophyList"></ol>
+      <aside class="detail" id="detailPanel" aria-live="polite">
+        <p class="detail-empty">Select a trophy to read its guide and sources.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section id="view-roadmap" class="view" hidden>
+    <h2>Roadmap to the platinum</h2>
+    <p class="lede">One playthrough, five stages, about 200 hours according to PowerPyx and
+    GTABase. The order below is built from the official trophy descriptions: story first,
+    then the open world with your partner, then activities, then collecting and money,
+    and the 100% checklist last. Cheats disable trophies and saving, so leave them off.</p>
+    <div id="roadmapStages"></div>
+  </section>
+
+  <section id="view-missables" class="view" hidden>
+    <h2>Missable trophies</h2>
+    <p class="lede">Six trophies need attention before the story moves past them. Everything else
+    on the list can be earned after the credits, in free roam.</p>
+    <div class="warning-box" id="missableWarning">
+      <strong>Do this first:</strong> in Chapter 1, meditate at Lucia’s balcony spot at
+      Jason’s house — the first spot for Positive Mental Attitude is reported to disappear
+      once Chapter 1 ends. Then start every stranger chain as soon as it unlocks.
+    </div>
+    <ol class="trophy-list" id="missableList"></ol>
+  </section>
+
+  <section id="view-about" class="view" hidden>
+    <h2>About this guide</h2>
+    <div class="about-body">
+      <p>Leonida Trophy Ledger is an offline guide and tracker for the 55 PlayStation 5
+      trophies of Grand Theft Auto VI: 1 platinum, 2 gold, 6 silver and 46 bronze, 28 of
+      them hidden on PlayStation until earned. There are no online trophies — every one
+      is single-player and offline.</p>
+      <h3>Where the facts come from</h3>
+      <ul>
+        <li>Every trophy’s <strong>name, description and grade</strong> is shown as
+        PlayStation publishes it, checked against the Exophase trophy list and the
+        PSNProfiles trophy list, which agree on all 55.</li>
+        <li>The <strong>progress targets</strong> (for example 42 Shooting Range
+        challenges, 18 meditation spots, 52 areas of Leonida) are PSN’s own counts,
+        as listed by PSNProfiles.</li>
+        <li>The <strong>hidden flags</strong> (28 trophies) follow the hidden-trophy
+        list published by EGamers, which matches the 28-hidden total on the other
+        launch lists.</li>
+        <li>Each guide is written in our own words for this guide. Where a fact comes
+        from another guide — GTABase or PowerPyx, as quoted by EGamers — the guide
+        names it beside the trophy. Where no published guide had confirmed a method
+        yet, the guide says so plainly instead of guessing.</li>
+      </ul>
+      <h3>How to use it</h3>
+      <ul>
+        <li>Tick a trophy when you earn it; the tick is saved in this browser.</li>
+        <li>For trophies with a PSN count, type your current number into the counter
+        box — it saves too.</li>
+        <li>Use <strong>Export progress</strong> to save a backup file, and
+        <strong>Import progress</strong> to restore it on another browser.</li>
+        <li>Turn on <strong>Hide story spoilers</strong> to keep story trophy names
+        and descriptions hidden until you earn them.</li>
+        <li>The roadmap orders the work; the missables page lists the six trophies
+        that need doing before the story passes them.</li>
+      </ul>
+      <h3>Honesty note</h3>
+      <p>This guide was written on launch week, from the official list and the first
+      published guides. A few trophies still have no confirmed method anywhere; their
+      guides say so and give the description itself as the hint. Methods marked as
+      reported by GTABase or PowerPyx are early reports and may change as more players
+      finish the game.</p>
+      <p class="fineprint">An unofficial fan guide. Not affiliated with Rockstar Games.
+      No Rockstar logo, artwork or game screenshot is used here; the look is our own.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Leonida Trophy Ledger — an offline, open guide to the 55 GTA VI trophies. Your
+  progress never leaves this browser.</p>
+</footer>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
